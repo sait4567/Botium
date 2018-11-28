@@ -99,10 +99,11 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(0, 27);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1024, 600);
+            this.tabControl.Size = new System.Drawing.Size(1008, 706);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -111,18 +112,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1016, 574);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 680);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // homeBrowser
             // 
-            this.homeBrowser.Location = new System.Drawing.Point(0, 0);
+            this.homeBrowser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeBrowser.Location = new System.Drawing.Point(3, 3);
             this.homeBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.homeBrowser.Name = "homeBrowser";
             this.homeBrowser.ScriptErrorsSuppressed = true;
-            this.homeBrowser.Size = new System.Drawing.Size(1000, 550);
+            this.homeBrowser.Size = new System.Drawing.Size(994, 650);
             this.homeBrowser.TabIndex = 0;
             this.homeBrowser.Url = new System.Uri("", System.UriKind.Relative);
             this.homeBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.homeBrowser_DocumentCompleted);
@@ -134,18 +136,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1016, 574);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 680);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Map";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // mapBrowser
             // 
+            this.mapBrowser.Dock = System.Windows.Forms.DockStyle.Top;
             this.mapBrowser.Location = new System.Drawing.Point(3, 3);
             this.mapBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.mapBrowser.Name = "mapBrowser";
             this.mapBrowser.ScriptErrorsSuppressed = true;
-            this.mapBrowser.Size = new System.Drawing.Size(1000, 550);
+            this.mapBrowser.Size = new System.Drawing.Size(994, 650);
             this.mapBrowser.TabIndex = 0;
             // 
             // tabPage3
@@ -155,7 +158,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(776, 378);
+            this.tabPage3.Size = new System.Drawing.Size(1000, 680);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             // 
@@ -209,10 +212,10 @@
             // 
             this.consoleBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.consoleBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.consoleBox.Location = new System.Drawing.Point(0, 605);
+            this.consoleBox.Location = new System.Drawing.Point(0, 609);
             this.consoleBox.Name = "consoleBox";
             this.consoleBox.ReadOnly = true;
-            this.consoleBox.Size = new System.Drawing.Size(1008, 125);
+            this.consoleBox.Size = new System.Drawing.Size(1008, 121);
             this.consoleBox.TabIndex = 2;
             this.consoleBox.Text = "";
             // 
@@ -228,10 +231,7 @@
             this.Controls.Add(this.consoleBox);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "BotiumMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Botium";
