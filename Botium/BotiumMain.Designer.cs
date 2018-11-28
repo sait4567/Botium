@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +46,7 @@
             this.idBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.consoleBox = new System.Windows.Forms.RichTextBox();
+            this.checkLoginTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -214,6 +216,10 @@
             this.consoleBox.TabIndex = 2;
             this.consoleBox.Text = "";
             // 
+            // checkLoginTimer
+            // 
+            this.checkLoginTimer.Tick += new System.EventHandler(this.checkLoginTimer_Tick);
+            // 
             // BotiumMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +267,7 @@
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.Timer checkLoginTimer;
     }
 }
 
