@@ -53,7 +53,7 @@ namespace Botium
                 //    loginbutton.InvokeMember("click");
                 //}
             }
-            consoleBox.Text = "Trying to Login...";
+            consoleBox.Text = "Yeniden giriş...";
         }
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
