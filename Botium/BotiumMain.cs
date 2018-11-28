@@ -25,37 +25,37 @@ namespace Botium
             foreach (HtmlElement idData in inputs)
             {
                 if (idData.GetAttribute("id").Contains("bgcdw_login_form_username"))
-                {
-                    idData.InnerText = "";
+                {                    
                     idData.InnerText = idBox.Text;
+                    foreach (HtmlElement passData in inputs)
+                    {
+                        if (passData.GetAttribute("id").Contains("bgcdw_login_form_password"))
+                        {
+                            passData.InnerText = passBox.Text;
+
+                            HtmlElementCollection buttons = homeBrowser.Document.GetElementsByTagName("button");
+                            foreach (HtmlElement loginbutton in buttons)
+                            {
+                                if (loginbutton.InnerText == "Giriş")//for Turkish
+                                {
+                                    loginbutton.InvokeMember("click");
+                                }
+                                else if (loginbutton.InnerText == "Login")//for English
+                                {
+                                    loginbutton.InvokeMember("click");
+                                }
+                                //if you have another language add it here
+                                //example
+                                //else if (loginbutton.InnerText == "login button text")
+                                //{
+                                //    loginbutton.InvokeMember("click");
+                                //}
+                            }
+                            consoleBox.Text = "Trying to login...";
+                        }
+                    }
                 }
             }
-            foreach (HtmlElement passData in inputs)
-            {
-                if (passData.GetAttribute("id").Contains("bgcdw_login_form_password"))
-                {
-                    passData.InnerText = passBox.Text;
-                }
-            }
-            HtmlElementCollection buttons = homeBrowser.Document.GetElementsByTagName("button");
-            foreach (HtmlElement loginbutton in buttons)
-            {
-                if (loginbutton.InnerText == "Giriş")//for Turkish
-                {
-                    loginbutton.InvokeMember("click");
-                }
-                else if (loginbutton.InnerText == "Login")//for English
-                {
-                    loginbutton.InvokeMember("click");
-                }
-                //if you have another language add it here
-                //example
-                //else if (loginbutton.InnerText == "login button text")
-                //{
-                //    loginbutton.InvokeMember("click");
-                //}
-            }
-            consoleBox.Text = "Yeniden giriş...";
         }
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
