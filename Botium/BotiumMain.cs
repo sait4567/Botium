@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Botium
 {
@@ -18,10 +20,49 @@ namespace Botium
         public BotiumMain()
         {
             InitializeComponent();
+            cacheDeleter();
+            historyDeleter();
         }
+
+        private void BotiumMain_Load(object sender, EventArgs e)
+        {
+            homeBrowser.Navigate("http://lp.darkorbit.com");
+        }
+
+        public void clear(DirectoryInfo di)
+        {
+            foreach (FileInfo fi in di.GetFiles())
+            {
+                try
+                {
+                    fi.Delete();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            foreach (DirectoryInfo sub in di.GetDirectories())
+            clear(sub);
+        }
+        private void cacheDeleter()
+        {
+            DirectoryInfo di2 = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.InternetCache));
+            int x = di2.GetDirectories().Count();
+            clear(di2);
+        }
+        private void historyDeleter()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.History);
+            DirectoryInfo di = new DirectoryInfo(path);
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+        }
+
         public string server;
         public string dosid;
-
         private void idMethod()
         {
             HtmlElementCollection inputs = homeBrowser.Document.GetElementsByTagName("input");
@@ -37,7 +78,7 @@ namespace Botium
         {
             HtmlElementCollection inputs = homeBrowser.Document.GetElementsByTagName("input");
             foreach (HtmlElement inputData in inputs)
-            {                
+            {
                 if (inputData.GetAttribute("id").Contains("bgcdw_login_form_password"))
                 {
                     inputData.InnerText = passBox.Text;
@@ -104,6 +145,7 @@ namespace Botium
                     consoleBox.Text = "Login Successful...";
                     dosidMethod();
                     checkLoginTimer.Stop();
+                    mapBrowser.Navigate("https://" + server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution");
                 }
             }
         }
@@ -156,9 +198,8 @@ namespace Botium
         }
 
         private void homeBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {            
+        {
             homeBrowserResize();
-            mapBrowser.Navigate("https://" + server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution");
         }
         private void homeBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -442,5 +483,7 @@ namespace Botium
                 }
             }
         }
+
+
     }
 }

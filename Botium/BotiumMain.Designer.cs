@@ -124,7 +124,7 @@
             this.homeBrowser.ScriptErrorsSuppressed = true;
             this.homeBrowser.Size = new System.Drawing.Size(1000, 550);
             this.homeBrowser.TabIndex = 0;
-            this.homeBrowser.Url = new System.Uri("http://lp.darkorbit.com", System.UriKind.Absolute);
+            this.homeBrowser.Url = new System.Uri("", System.UriKind.Relative);
             this.homeBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.homeBrowser_DocumentCompleted);
             this.homeBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.homeBrowser_Navigated);
             // 
@@ -235,6 +235,7 @@
             this.Name = "BotiumMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Botium";
+            this.Load += new System.EventHandler(this.BotiumMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
