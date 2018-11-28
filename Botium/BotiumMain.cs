@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -93,7 +95,292 @@ namespace Botium
         private void homeBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             dosidMethod();
+            homeBrowserResize();
             mapBrowser.Navigate("https://" + server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution");
         }
+        private void homeBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            homeBrowserResize();
+        }
+
+        object pswaHeight;
+        object pswaWidth;
+        int pswaHeightInt;
+        int pswaWidthInt;
+        private enum Exec
+        {
+            OLECMDID_OPTICAL_ZOOM = 63
+        }
+
+        private enum execOpt
+        {
+            OLECMDEXECOPT_DODEFAULT = 0,
+            OLECMDEXECOPT_PROMPTUSER = 1,
+            OLECMDEXECOPT_DONTPROMPTUSER = 2,
+            OLECMDEXECOPT_SHOWHELP = 3
+        }
+        private void homeBrowserResize()
+        {
+            pswaHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            pswaWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            pswaHeightInt = System.Convert.ToInt32(pswaHeight);
+            pswaWidthInt = System.Convert.ToInt32(pswaWidth);
+
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 5.6) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 2.97)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 3.0) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.4)))
+            {
+                try
+                {
+                    object MyWeb = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                40,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 2.97) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 2.58)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.4) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.13)))
+            {
+                try
+                {
+                    object MyWeb2 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb2, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                50,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex2)
+                {
+                    MessageBox.Show(ex2.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 2.58) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 2.23)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.13) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.85)))
+            {
+                try
+                {
+                    object MyWeb3 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb3, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                60,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex3)
+                {
+                    MessageBox.Show(ex3.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 2.23) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 1.89)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.85) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.64)))
+            {
+                try
+                {
+                    object MyWeb4 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb4, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                70,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex4)
+                {
+                    MessageBox.Show(ex4.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 1.89) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 1.6)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.64) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.53)))
+            {
+                try
+                {
+                    object MyWeb5 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb5, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                80,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex5)
+                {
+                    MessageBox.Show(ex5.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 1.6) & (double)this.homeBrowser.Width < Math.Round((double)this.pswaWidthInt / 1.2)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.53) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.16)))
+            {
+                try
+                {
+                    object MyWeb6 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb6, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                90,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex6)
+                {
+                    MessageBox.Show(ex6.Message);
+                }
+            }
+            if ((double)this.homeBrowser.Width > Math.Round((double)this.pswaWidthInt / 1.2) && (double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.16))
+            {
+                try
+                {
+                    object MyWeb7 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb7, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                100,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex7)
+                {
+                    MessageBox.Show(ex7.Message);
+                }
+            }
+            //height
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 5.6) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.97)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 3.0) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.4)))
+            {
+                try
+                {
+                    object MyWeb = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                40,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.97) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaWidthInt / 2.58)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.4) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.13)))
+            {
+                try
+                {
+                    object MyWeb2 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb2, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                50,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex2)
+                {
+                    MessageBox.Show(ex2.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.58) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 2.23)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.13) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.85)))
+            {
+                try
+                {
+                    object MyWeb3 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb3, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                60,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex3)
+                {
+                    MessageBox.Show(ex3.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 2.23) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.89)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.85) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.64)))
+            {
+                try
+                {
+                    object MyWeb4 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb4, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                70,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex4)
+                {
+                    MessageBox.Show(ex4.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.89) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.6)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.64) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.53)))
+            {
+                try
+                {
+                    object MyWeb5 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb5, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                80,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex5)
+                {
+                    MessageBox.Show(ex5.Message);
+                }
+            }
+            if (((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.6) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.2)) | ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.53) & (double)this.homeBrowser.Height < Math.Round((double)this.pswaHeightInt / 1.16)))
+            {
+                try
+                {
+                    object MyWeb6 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb6, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                90,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex6)
+                {
+                    MessageBox.Show(ex6.Message);
+                }
+            }
+            if ((double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.2) && (double)this.homeBrowser.Height > Math.Round((double)this.pswaHeightInt / 1.16))
+            {
+                try
+                {
+                    object MyWeb7 = RuntimeHelpers.GetObjectValue(this.homeBrowser.ActiveXInstance);
+                    NewLateBinding.LateCall(MyWeb7, null, "ExecWB", new object[]
+                    {
+                BotiumMain.Exec.OLECMDID_OPTICAL_ZOOM,
+                BotiumMain.execOpt.OLECMDEXECOPT_PROMPTUSER,
+                100,
+                IntPtr.Zero
+                    }, null, null, null, true);
+                }
+                catch (Exception ex7)
+                {
+                    MessageBox.Show(ex7.Message);
+                }
+            }
+        }
+
+
     }
 }
