@@ -59,7 +59,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,7 +100,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(784, 404);
+            this.tabControl.Size = new System.Drawing.Size(1024, 600);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -109,19 +109,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(776, 378);
+            this.tabPage1.Size = new System.Drawing.Size(1016, 574);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // homeBrowser
             // 
-            this.homeBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeBrowser.Location = new System.Drawing.Point(3, 3);
+            this.homeBrowser.Location = new System.Drawing.Point(0, 0);
             this.homeBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.homeBrowser.Name = "homeBrowser";
             this.homeBrowser.ScriptErrorsSuppressed = true;
-            this.homeBrowser.Size = new System.Drawing.Size(770, 372);
+            this.homeBrowser.Size = new System.Drawing.Size(1000, 550);
             this.homeBrowser.TabIndex = 0;
             this.homeBrowser.Url = new System.Uri("http://lp.darkorbit.com", System.UriKind.Absolute);
             this.homeBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.homeBrowser_DocumentCompleted);
@@ -133,19 +132,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(776, 378);
+            this.tabPage2.Size = new System.Drawing.Size(1016, 574);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Map";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // mapBrowser
             // 
-            this.mapBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mapBrowser.Location = new System.Drawing.Point(3, 3);
             this.mapBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.mapBrowser.Name = "mapBrowser";
             this.mapBrowser.ScriptErrorsSuppressed = true;
-            this.mapBrowser.Size = new System.Drawing.Size(770, 372);
+            this.mapBrowser.Size = new System.Drawing.Size(1000, 550);
             this.mapBrowser.TabIndex = 0;
             // 
             // tabPage3
@@ -209,10 +207,10 @@
             // 
             this.consoleBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.consoleBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.consoleBox.Location = new System.Drawing.Point(0, 437);
+            this.consoleBox.Location = new System.Drawing.Point(0, 605);
             this.consoleBox.Name = "consoleBox";
             this.consoleBox.ReadOnly = true;
-            this.consoleBox.Size = new System.Drawing.Size(784, 125);
+            this.consoleBox.Size = new System.Drawing.Size(1008, 125);
             this.consoleBox.TabIndex = 2;
             this.consoleBox.Text = "";
             // 
@@ -220,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.consoleBox);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);

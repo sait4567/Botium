@@ -95,12 +95,12 @@ namespace Botium
         private void homeBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             dosidMethod();
-            homeBrowserResize();
+            //homeBrowserResize();
             mapBrowser.Navigate("https://" + server + ".darkorbit.com/indexInternal.es?action=internalMapRevolution");
         }
         private void homeBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            homeBrowserResize();
+           //homeBrowserResize();
         }
 
         object pswaHeight;
