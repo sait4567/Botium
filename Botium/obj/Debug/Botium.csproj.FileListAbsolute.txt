@@ -7,3 +7,6 @@ C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.csproj.GenerateR
 C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.csproj.CoreCompileInputs.cache
 C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.exe
 C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.pdb
+C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.csprojAssemblyReference.cache
+C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\Can\Source\Repos\ProjectBotium\Botium\obj\Debug\Botium.csproj.ResolveComReference.cache

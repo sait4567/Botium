@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using ShockwaveFlashObjects;
 
 namespace Botium
 {
@@ -19,13 +20,13 @@ namespace Botium
     {
         public BotiumMain()
         {
-            InitializeComponent();
-            cacheDeleter();
-            historyDeleter();
+            InitializeComponent();            
+            //historyDeleter();
         }
 
         private void BotiumMain_Load(object sender, EventArgs e)
         {
+            cacheDeleter();
             homeBrowser.Navigate("http://lp.darkorbit.com");
         }
 
