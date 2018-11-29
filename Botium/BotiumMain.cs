@@ -26,7 +26,7 @@ namespace Botium
 
         private void BotiumMain_Load(object sender, EventArgs e)
         {
-            cacheDeleter();
+            //cacheDeleter();
             homeBrowser.Navigate("http://lp.darkorbit.com");
         }
 
